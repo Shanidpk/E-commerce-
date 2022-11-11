@@ -1,0 +1,30 @@
+<section>
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor='let user of users'>
+                <th scope="row">1</th>
+                <td>{{user.name}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.phone}}</td>
+                <td>
+                    <button class="btn btn-success">Modify</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteuser(user._id)">Delete</button>
+                </td>   
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</section>

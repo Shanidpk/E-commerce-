@@ -1,0 +1,69 @@
+<section>
+    <div class="container">
+        <table class="table table-striped">
+            <thead >
+              <tr>
+                <th scope="col">si.no</th>
+                <th scope="col">name</th>
+                <th scope="col">price</th>
+                <th scope="col">catagory</th>
+                <th scope="col">image</th>
+                <th scope="col">manage</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr  *ngFor = "let product of products;let i =index"> 
+                <th scope="row">{{i+1}}</th>
+                <td>{{product.productname}}</td>
+                <td>{{product.price}}</td>
+                <td>{{product.category}}</td>
+                <td><img src="{{product.image}}" alt="" width="30%"></td>
+                <td class="mt-5">
+                  <a class="btn btn-primary" href="#exampleModalToggle"  data-bs-toggle="modal" role="button" (click)="modify(product)">modify</a>
+                   <button class="btn btn-danger ms-2" (click)="delete(product._id)">delete</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+</section>
+
+                                            <!--for model-->
+
+
+<section *ngFor = "let product of products">
+  <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+         <form [formGroup]="editform"> 
+            <div class="productName ">
+              <input type="text" class="form-control w-75 ms-5 mb-2" formControlName="productname">
+            </div>
+            <div class="price ">
+              <input type="text" class="form-control w-75 ms-5 mb-2" formControlName="price">
+            </div>
+            <div class="image ">
+              <input type="text"  class="form-control w-75 ms-5 mb-2" formControlName="image">
+            </div>
+            <div class="category">
+              <input type="text" class="form-control w-75 ms-5 mb-2" formControlName="catagory">
+            </div>
+            <div class="description">
+              <input type="text"  class="form-control w-75 ms-5 mb-2" formControlName="description">
+            </div>
+          </form>
+          
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="changeproduct(product)">change</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> -->
+</section>

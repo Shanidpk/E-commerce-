@@ -1,0 +1,11 @@
+.collapse{
+    position: relative;
+    left: 30%;
+}
+.navbar-nav{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.logout{
+    position: relative;
+    left: 100%;
+}

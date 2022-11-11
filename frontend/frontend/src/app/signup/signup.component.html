@@ -1,0 +1,174 @@
+<!-- <section>
+    <div class="container ">
+        <nav class="navbar navbar-expand-lg bg-light fixed-top">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Navbar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  <a class="nav-link" href="#">Features</a>
+                  <a class="nav-link" href="#">Pricing</a>
+                  <a class="nav-link disabled">Disabled</a>
+                </div>
+              </div>
+            </div>
+          </nav>
+    </div>
+</section> -->
+<!-- 
+<section>
+    <div class="login-text container w-25 mt-5">
+            <h3>Login to Your Account</h3>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-6"></div>
+
+
+            <div class="col-6">
+                <div class="box mt-5">
+                    <form [formGroup]="signupForm">
+                        <div class="name mt-5">
+                            <label for="name">
+                                <input type="text" placeholder="name" class="form-control" formControlName="name">
+                            </label>
+                        </div>
+    
+                        <div class="phone mt-2">
+                            <label for="phone">
+                                <input type="text" placeholder="Phone" class="form-control" formControlName="phone">
+                            </label>
+                        </div>
+    
+                        <div class="email mt-2">
+                            <label for="email">
+                                <input type="email" placeholder="Email" class="form-control" formControlName="email">
+                            </label>
+                        </div>
+
+                        <div class="password mt-2">
+                            <label for="password">
+                                <input type="password" placeholder="password" class="form-control" formControlName="password">
+                            </label>
+                        </div>
+                        
+                        <div class="button mt-2">
+                            <label for="btn">
+                                <button class="btn btn-success" (click)="signup()">signup</button>
+                            </label>
+                        </div>
+    
+                        <div class="">
+                            <p>already account <a href="./login">Login</a></p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section> -->
+
+
+<!-- Section: Design Block -->
+<div class="background">
+<section class="background-radial-gradient overflow-hidden">
+    
+  
+    <div class="container px-4 py-5 px-md-5 text-center text-lg-start my-5">
+      <div class="row gx-lg-5 align-items-center mb-5">
+        <div class="col-lg-6 mb-5 mb-lg-0" style="z-index: 10">
+          <h1 class="my-5 display-5 fw-bold ls-tight" style="color: hsl(218, 81%, 95%)">
+            Amaze <br />
+            <!-- <span style="color: hsl(218, 81%, 75%)">for your business</span> -->
+          </h1>
+          <p class="mb-4 opacity-70" style="color: hsl(218, 81%, 85%)">
+            Explore the Rolex collection of prestigious, high-precision timepieces. Rolex offers a wide assortment of Classic and Professional watch models to suit any wrist. Discover the broad selection of Rolex watches to find a perfect combination of style and functionality.
+          </p>
+        </div>
+  
+        <div class="col-lg-6 mb-5 mb-lg-0 position-relative">
+        
+          <div id="radius-shape-1" class="position-absolute rounded-circle shadow-5-strong"></div>
+          <div id="radius-shape-2" class="position-absolute shadow-5-strong"></div>
+  
+          <div class="card bg-glass">
+            <div class="card-body px-4 py-5  px-md-5">
+              <form [formGroup]="signupForm " class="">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row">
+                    <h3 class="register-text text-center">Register</h3>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text"  placeholder="name" class="form-control" formControlName="name">
+                     
+                      <!-- <label class="form-label" for="form3Example1">First name</label> -->
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-4">
+                    <div class="form-outline">
+                      <input type="text"  placeholder="Phone" class="form-control" formControlName="phone">
+                        
+                      <!-- <label class="form-label" for="form3Example2">User id</label> -->
+                    </div>
+                  </div>
+                </div>
+  
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input  type="email" placeholder="Email" class="form-control" formControlName="email">
+                  <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+                </div>
+
+                <!--DOB-->
+                <div class="form-outline mb-4">
+                    <input type="password" placeholder="password" class="form-control" formControlName="password">
+                    <!-- <label class="form-label" for="form3Example3">date</label> -->
+                  </div>
+  
+                <!-- Password input -->
+               
+  
+             
+  
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-primary btn-block mb-2" (click)="signup()">Sign up</button>
+                
+                <div class="link ms-5">
+                    <h6 class="text1 ms-3"><p class="text ms-5">Already user? <a href="./login">Login</a></p></h6>
+                </div>
+  
+                <!-- Register buttons -->
+                <!-- <div class="text-center">
+                  <p>or sign up with:</p>
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-facebook-f"></i>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-google"></i>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-twitter"></i>
+                  </button>
+  
+                  <button type="button" class="btn btn-link btn-floating mx-1">
+                    <i class="fab fa-github"></i>
+                  </button>
+                </div> -->
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+  <!-- Section: Design Block -->

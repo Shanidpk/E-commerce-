@@ -11,9 +11,26 @@ mongoose.connect(mongoDB,{useNewUrlParser:true} ,err => {
 
 const User = mongoose.model('User',{
     name:String,
-    phone:Number,
+    phone:String,
+    email:String,
     password:String
 })
 
-module.exports = {User}
+const Product = mongoose.model('Product',{
+    productname:String,
+    price:String,
+    image:String,
+    category:String,
+    description:String
+})
+
+const Cart = mongoose.model('Cart',{
+    productname:String,
+    price:String,
+    image:String,
+    category:String,
+    description:String
+})
+
+module.exports = {User , Product ,Cart}
 

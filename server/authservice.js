@@ -1,6 +1,6 @@
 const db = require('./db')
 
-const signup = ((name,phone,password) => {
+const signup = ((name,phone,email,password) => {
    return db.User.findOne({phone}).then(user => {
         if(user){
             return {
@@ -10,7 +10,7 @@ const signup = ((name,phone,password) => {
             }
         }else{
             const newdata = new db.User({
-                name,phone,password
+                name,phone,email,password
             })
             newdata.save()
             return{
@@ -23,18 +23,18 @@ const signup = ((name,phone,password) => {
 })
 
 
-const login = ((phone,password) => {
-    return db.User.findOne({phone}).then((data) => {
+const login = ((email,password) => {
+    return db.User.findOne({email,password}).then((data) => {
         if(data){
             return{
                 status:true,
                 statuscode:200,
-                message:'success'
+                message:'Login success'
             }
         }else{
             return{
                 status:false,
-                statuscode:400,
+                statuscode:401,
                 message:"Login failed"
             }
         }

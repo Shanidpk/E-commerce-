@@ -1,0 +1,30 @@
+<app-navbar></app-navbar>
+
+<section class="container">
+    
+    <div class="text-center">
+        <h4>YOUR CART</h4>
+    </div>
+<div class="row mt-5">
+    <div class="" *ngFor="let item of getAllCart">
+        <div class="pt-5  mb-3">
+            <p class="mb-5 ms-4">PRODUCT</p>
+            <div class="d-flex">
+                <img [src]="item.image" alt="" style="width: 100px;">
+                <div class="ms-4">
+                    <label for="">{{item.productname}}</label><br>
+                    <label for="">{{item.category}}</label><br>
+                    <label for="">{{item.price | currency:'INR'}}</label>
+                    <!--<p>Quantity</p>!-->
+                </div>
+            </div>
+            <div class="remove mb-3">
+                <button class=" bg-white ps-4 pe-4 pt-2 pb-2 me-3 border">Update Cart</button>
+                <button class=" bg-white ps-4 pe-4 pt-2 pb-2  border" (click)="remove(item._id)">Remove</button>
+            </div>
+        </div>
+        <hr >
+    </div>
+    
+</div>
+</section>
