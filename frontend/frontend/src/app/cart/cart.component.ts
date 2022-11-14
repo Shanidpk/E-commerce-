@@ -28,7 +28,7 @@ export class CartComponent implements OnInit {
         this.getCarted=data
         this.getAll=this.getCarted.item
         this.getAllCart=this.getAll
-        console.log("getCarted",this.getAll)
+     
         console.log("getCarted",this.getAllCart)   
       }
     })
@@ -48,5 +48,8 @@ export class CartComponent implements OnInit {
       }
     })
   }
+
+
+
 
 }

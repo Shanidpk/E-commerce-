@@ -16,6 +16,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ProductHomeComponent } from './product-home/product-home.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
+import { MyordersComponent } from './myorders/myorders.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { FooterComponent } from './footer/footer.component';
     NavbarComponent,
     ProductHomeComponent,
     CartComponent,
-    FooterComponent
+    FooterComponent,
+    MyordersComponent
   ],
   imports: [
     BrowserModule,

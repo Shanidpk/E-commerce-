@@ -27,23 +27,15 @@ export class LoginComponent implements OnInit {
     let email = this.loginForm.value.email
     let password = this.loginForm.value.password
 
-    this.loginService.login(email,password).subscribe((data:any) => {
-      if(data){
-        if(this.loginForm.valid){
+      this.loginService.login(email,password).subscribe((data:any) => {
+        if(data){
+          console.log("check",data)
           alert(data.message)
-          this.route.navigateByUrl('homepage')
+            this.route.navigateByUrl('homepage')
+          }else{
+          alert(data.message) 
         }
-        else{
-          alert("plese fill it")
-        }
-      }
-      
-        else{
-          alert(data.error.message)
-        }
-        
-      
-     
-    })
+          
+      })
   }
 }

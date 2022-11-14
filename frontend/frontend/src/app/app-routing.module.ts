@@ -19,7 +19,7 @@ const routes: Routes = [
   {path:'view-products',component:ViewProductsComponent},
   {path:'view-users',component:ViewUsersComponent},
   {path:'user-products',component:ProductsComponent},
-  {path:'product-home',component:ProductHomeComponent},
+  {path:'product-home/:id',component:ProductHomeComponent},
   {path:'cart',component:CartComponent},
   {path:'footer',component:FooterComponent}
 ];

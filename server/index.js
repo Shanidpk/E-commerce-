@@ -110,6 +110,7 @@ app.put('/editProduct/:id',(req,res) => {
         if(err){
             console.log("error");
         }else{
+            log
             res.send(doc)
         }
     })

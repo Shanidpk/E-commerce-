@@ -1,20 +1,22 @@
 <app-navbar></app-navbar>
+
 <section>
     <div class="container mt-5">
-        <h4>Products</h4>
+        <h4 class="text-center">Products</h4>
         <div class="row">
             <div class="col-md-3" *ngFor="let product of products">
 
-                <a href="/product-home" div class="card mb-5 text-center  border-0 shadow pt-2" (click)="productdetails(product._id)">
+                <a [routerLink]="['/product-home',product._id]" div class="mb-5 text-center  border-0 shadow pt-2">
                     <div class="">
-                        <img [src]="product.image" class="card-img-top " alt="...">
+                        <img [src]="product.image" class="card-img-top hover-zoom" alt="...">
                     </div>
                     <div class="card-body ">
-                        <h5 class="text-dark">{{product.productname}}</h5>
-                        <h6 class="text-dark">{{product.price | currency:"USD"}}</h6>
-                        <button class="btn btn-outline-dark" (click)="addtoCart(product)">Add to cart</button>
+                        <h5 class=" image text-dark">{{product.productname}}</h5>
+                        <h6 class=" text-dark">{{product.price | currency:"INR"}}</h6>
+                        <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
 
                     </div>
+                    
                 </a>
                 
             </div>

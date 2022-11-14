@@ -36,16 +36,8 @@ export class ProductsComponent implements OnInit {
     // console.log("productcompont",product);
   }
   
-  addtoCart(item:any){ 
-      this.AddtoProduct=item
-      console.log("dataaaa",this.AddtoProduct)
-      this.http.post('http://localhost:3000/addtocart/',this.AddtoProduct).subscribe((data:any)=>{
-        if(data){
-          console.log("dataaaaaaddd",data)
-          alert("added to cart")
-        }
-      })
-  }
+  
+  
 
   
 

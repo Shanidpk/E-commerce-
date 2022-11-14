@@ -34,17 +34,17 @@ Proname:any
 
    productdetails(id:any){
     
-    console.log("Thhe idddddddddddddddddddddd",this.selectdata);
-    this.http.get('http://localhost:3000/single-product/'+id).subscribe((data:any)=>{
-        if(data){
-          console.log("favasaaaaa",data)
-          this.selectdata=data
-          this.Proname = this.selectdata.productname
-          console.log("f",this.selectdata)
+     return this.http.get('http://localhost:3000/single-product/'+id)
+    //  .subscribe((data:any)=>{
+    //     if(data){
+    //       console.log("favasaaaaa",data)
+    //       this.selectdata=data
+    //       this.Proname = this.selectdata.productname
+    //       console.log("f",this.selectdata)
 
-        }
-    })
-
+    //     }
+    // })
+//-------------------------------------------------------------
   //   const data:any = await this.http.get(`http://localhost:3000/single-product/636bfd675dee1838cd3904cc`)
     
   //   this.selectdata = data.data

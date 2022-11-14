@@ -34,7 +34,7 @@ const login = ((email,password) => {
         }else{
             return{
                 status:false,
-                statuscode:401,
+                statuscode:400,
                 message:"Login failed"
             }
         }
