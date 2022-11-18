@@ -5,3 +5,25 @@ label{
     position: relative;
     left: 200px;
 }
+.buybtn{
+    background-color: white;
+    color: black;
+}
+.buybtn:hover{
+    background-color: black;
+    color: white;
+    border-color: white;
+    border: 10px;
+}
+.order-sec{
+    position: relative;
+    position: sticky;
+    top:0px
+}
+.main{
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+}

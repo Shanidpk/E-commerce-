@@ -4,15 +4,16 @@ body{
 .card{
     text-decoration: none;
 }
-img{
-   
-    
-}
-.image{
-    
-}
+
 
 a{
     text-decoration: none;
     
+}
+
+
+.shadow:hover{
+
+    transform: scale(1.1);
+    transition: 0.9s;
 }

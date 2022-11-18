@@ -1,0 +1,101 @@
+<app-navbar></app-navbar>
+<div class="container w-75">
+    <div class="row mt-5">
+        <div class="col-md-8 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Biling details</h5>
+            </div>
+            <div class="card-body">
+              <form [formGroup]="details">
+                <!-- 2 column grid layout with text inputs for the first and last names -->
+                <div class="row mb-4">
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="form7Example1" class="form-control" formControlName="firstName"/>
+                      <label class="form-label" for="form7Example1" >First name</label>
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-outline">
+                      <input type="text" id="form7Example2" class="form-control"  formControlName="secondName"/>
+                      <label class="form-label" for="form7Example2">Last name</label>
+                    </div>
+                  </div>
+                </div>
+      
+                <!-- Text input -->
+                
+      
+                <!-- Text input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example4" class="form-control" formControlName="address"/>
+                  <label class="form-label" for="form7Example4" formControlName="address">Address</label>
+                </div>
+
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example3" class="form-control" formControlName="pincode"/>
+                  <label class="form-label" for="form7Example3">pincode</label>
+                </div>
+      
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                  <input type="email" id="form7Example5" class="form-control" formControlName="email"/>
+                  <label class="form-label" for="form7Example5" >Email</label>
+                </div>
+      
+                <!-- Number input -->
+                <div class="form-outline mb-4">
+                  <input type="text" id="form7Example6" class="form-control" formControlName="phone"/>
+                  <label class="form-label" for="form7Example6" >Phone</label>
+                </div>
+                <!-- <button (click)="sumbit()">submit</button> -->
+                </form>
+            </div>
+          </div>
+        </div>
+      
+        <div class="col-md-4 mb-4">
+          <div class="card mb-4">
+            <div class="card-header py-3">
+              <h5 class="mb-0">Summary</h5>
+            </div>
+            <div class="card-body">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 pb-0">
+                  Products
+                  <span>{{product.price|currency:'INR'}}</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center px-0">
+                  Shipping
+                  <span>Gratis</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
+                  <div>
+                    <strong>Total amount</strong>
+                    <strong>
+                      <p class="mb-0">(including VAT)</p>
+                    </strong>
+                  </div>
+                  <span><strong>{{product.price|currency:'INR'}}</strong></span>
+                </li>
+              </ul>
+
+              <form [formGroup]="details">
+                <p class="fw-bold">Please select your payment method:</p>
+                  <input type="radio" id="html" name="payment" value="cod" formControlName="payment">
+                  <label for="html">COD</label><br>
+                  <input type="radio" id="css" name="payment" value="online" formControlName="payment">
+                  <label for="css">ONLINE</label><br>
+             </form>
+             <div class="text-center mt-3">
+                <button type="button" class=" btn btn-primary"(click)="sumbit()">
+                Make purchase
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

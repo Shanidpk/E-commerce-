@@ -107,14 +107,14 @@
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <input type="text"  placeholder="name" class="form-control" formControlName="name">
-                     
+                      <div style="color: red;" *ngIf="this.signupForm.get('name')?.errors&&this.signupForm.get('name')?.touched">must be charcter</div>
                       <!-- <label class="form-label" for="form3Example1">First name</label> -->
                     </div>
                   </div>
                   <div class="col-md-6 mb-4">
                     <div class="form-outline">
                       <input type="text"  placeholder="Phone" class="form-control" formControlName="phone">
-                        
+                      <div style="color: red;" *ngIf="this.signupForm.get('phone')?.errors&&this.signupForm.get('phone')?.touched">must be number</div>
                       <!-- <label class="form-label" for="form3Example2">User id</label> -->
                     </div>
                   </div>
@@ -124,20 +124,16 @@
                 <div class="form-outline mb-4">
                   <input  type="email" placeholder="Email" class="form-control" formControlName="email">
                   <!-- <label class="form-label" for="form3Example3">Email address</label> -->
+                  <div style="color: red;" *ngIf="this.signupForm.get('email')?.errors&&this.signupForm.get('email')?.touched">email must be valid</div>
+
                 </div>
 
-                <!--DOB-->
+            
                 <div class="form-outline mb-4">
                     <input type="password" placeholder="password" class="form-control" formControlName="password">
-                    <!-- <label class="form-label" for="form3Example3">date</label> -->
+                    <span style="color: red;" *ngIf="this.signupForm.get('password')?.errors&&this.signupForm.get('password')?.touched">Password must be at least 6 characters</span>
                   </div>
   
-                <!-- Password input -->
-               
-  
-             
-  
-                <!-- Submit button -->
                 <button type="submit" class="btn btn-primary btn-block mb-2" (click)="signup()">Sign up</button>
                 
                 <div class="link ms-5">

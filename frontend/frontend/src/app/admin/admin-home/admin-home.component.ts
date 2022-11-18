@@ -9,6 +9,8 @@ import { AdminserviceService } from '../service/adminservice.service';
 })
 export class AdminHomeComponent implements OnInit {
 
+
+
   addProduct = this.form.group({
     productname:['',[Validators.required]],
     price:['',[Validators.required]],
@@ -21,6 +23,7 @@ export class AdminHomeComponent implements OnInit {
   constructor(private form:FormBuilder,private adminservice:AdminserviceService) { }
 
   ngOnInit(): void {
+
   }
 
   //---------------------------------------------add product -------------------------------------------
@@ -40,9 +43,6 @@ export class AdminHomeComponent implements OnInit {
         alert(data.error.message)
       }
     })
-    
-
   }
-
-
+  
 }

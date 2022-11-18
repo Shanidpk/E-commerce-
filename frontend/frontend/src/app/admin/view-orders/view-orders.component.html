@@ -1,0 +1,36 @@
+<section>
+    <div class="container">
+        <table class="table mt-5">
+            <thead>
+              <tr>
+                <th scope="col">no</th>
+                <th scope="col">name</th>
+                <th scope="col">product</th>
+                <th scope="col">status</th>
+                <th scope="col">totel</th>
+                <th scope="col">Address</th>
+                <th scope="col">Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let order of orders;let i=index">
+                <th scope="row">{{i+1}}</th>
+                <td>{{order.firstname}}</td>
+                <td>{{order.productname}}</td>
+                <td><select id="orderStatus" name="options">
+                    <option value="shipped">shipped</option>
+                    <option value="pendind" selected>pendind</option>
+                    <option value="canceled">canceled</option>
+                    <option value="deliverd">deliverd</option>
+                  </select>
+                </td>
+                <td >{{order.price}}</td>
+                <td>{{order.address}}</td>
+                <td>{{order.payment}}</td>
+                <button class="button" (click)="update(order._id)">update</button>
+            </tr>
+            </tbody>
+          </table>
+    </div>
+</section>
+

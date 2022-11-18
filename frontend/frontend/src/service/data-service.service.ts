@@ -53,4 +53,25 @@ Proname:any
     
   // }
 }
+
+
+  buynow(productname:any,price:any,image:any,category:any,description:any,firstname:any,secondname:any,pin:any,address:any,email:any,phone:any,payment:any,amount:any,orderStatus:any){
+      const data = {
+        productname,
+        price,
+        image,
+        category,
+        description,
+        firstname,
+        secondname,
+        pin,
+        address,
+        email,
+        phone
+        ,payment,
+        amount,
+        orderStatus
+     }
+     return this.http.post('http://localhost:3000/orders',data)
+    }
 }

@@ -1,4 +1,18 @@
-.details{
-    position: relative;
-    top: 100px;
+
+.pbtn:hover{
+    color: white;
+    background-color: black;
+    border-color: white;
+   
+ 
 }
+.pbtn{
+    color: black;
+    
+    border: none;
+    border-radius: 3px;
+}
+img{
+    border: none;
+    
+ }

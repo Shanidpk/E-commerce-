@@ -17,6 +17,9 @@ import { ProductHomeComponent } from './product-home/product-home.component';
 import { CartComponent } from './cart/cart.component';
 import { FooterComponent } from './footer/footer.component';
 import { MyordersComponent } from './myorders/myorders.component';
+import { DetailspageComponent } from './detailspage/detailspage.component';
+import { ViewOrdersComponent } from './admin/view-orders/view-orders.component';
+import { NavbarBannerComponent } from './navbar-banner/navbar-banner.component';
 
 
 @NgModule({
@@ -33,7 +36,10 @@ import { MyordersComponent } from './myorders/myorders.component';
     ProductHomeComponent,
     CartComponent,
     FooterComponent,
-    MyordersComponent
+    MyordersComponent,
+    DetailspageComponent,
+    ViewOrdersComponent,
+    NavbarBannerComponent
   ],
   imports: [
     BrowserModule,

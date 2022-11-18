@@ -1,12 +1,22 @@
-.collapse{
-    position: relative;
-    left: 30%;
-}
+    /* .collapse{
+        position: relative;
+        left: 30%;
+    } */
 .navbar-nav{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: medium;
 }
 .logout{
-    position: relative;
-    left: 100%;
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.orders{
+    font-size: medium;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+}
+.nav-link:hover{
+    color: black;
 }
 

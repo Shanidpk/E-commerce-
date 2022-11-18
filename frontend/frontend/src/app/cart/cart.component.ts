@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DataServiceService } from 'src/service/data-service.service';
 
 @Component({
@@ -8,31 +9,46 @@ import { DataServiceService } from 'src/service/data-service.service';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent implements OnInit {
-
+  
+  totel:Number = 0
   getCarted:any
   getAll:any
   getAllCart:any
-  constructor(private http:HttpClient,private service:DataServiceService) { }
+  cartlength:any
+  constructor(private http:HttpClient,private service:DataServiceService,private route:Router) { }
 
   ngOnInit(): void {
     this.getcart()
     this.service.selectdata
-    console.log("service",this.service);
     
   }
 
+  
   getcart(){
     this.http.get('http://localhost:3000/getCart').subscribe((data)=> {
       if(data){
-        console.log(data);
+        console.log("sdf",data);
         this.getCarted=data
         this.getAll=this.getCarted.item
         this.getAllCart=this.getAll
-     
-        console.log("getCarted",this.getAllCart)   
+        
+        this.cartlength = this.getAllCart.length
+        //for getting the price
+        
+        for(let i:number=0;i<this.getAllCart.length;i++){
+          this.totel=Number(this.totel)
+          let price:any = Number(this.getAllCart[i].price)
+          console.log(price)
+          this.totel = this.totel+price
+          console.log('totel',this.totel)
+        }
       }
     })
   }
+
+  
+    
+   
 
   remove(id:any){
   
@@ -43,13 +59,16 @@ export class CartComponent implements OnInit {
     if(data){
         console.log("data in remove",data)
         alert("product removed")
-    this.getcart()
+        this.getcart()
 
       }
     })
+    window.location.reload()
   }
 
 
-
+  placeorder(totel:any){
+    this.route.navigateByUrl('/details',totel)
+  }
 
 }

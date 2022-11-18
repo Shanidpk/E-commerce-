@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const mongoDB = 'mongodb://127.0.0.1:27017/E-commerce'
 
 mongoose.connect(mongoDB,{useNewUrlParser:true} ,err => {
-    if(!err){
+    if(!err){   
         console.log("db connected");
     }else{
         console.log("Error");
@@ -21,7 +21,8 @@ const Product = mongoose.model('Product',{
     price:String,
     image:String,
     category:String,
-    description:String
+    description:String,
+    
 })
 
 const Cart = mongoose.model('Cart',{
@@ -33,6 +34,23 @@ const Cart = mongoose.model('Cart',{
 })
 
 
+const Order = mongoose.model('Order',{
+    productname:String,
+    price:String,
+    image:String,
+    category:String,
+    description:String,
+    firstname:String,
+    secondname:String,
+    pin:String,
+    address:String,
+    email:String,
+    phone:String,
+    payment:String,
+    amount:String,
+    orderStatus:String
+}) 
 
-module.exports = {User , Product ,Cart}
+
+module.exports = {User , Product ,Cart,Order}
 

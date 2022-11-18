@@ -2,13 +2,14 @@
 
 <section>
     <div class="container mt-5">
-        <h4 class="text-center">Products</h4>
-        <div class="row">
-            <div class="col-md-3" *ngFor="let product of products">
-
+        <h4 class="text-center">PRODUCTS</h4>
+        <div class="row ">
+            <div class="col-md-3 mt-4 " *ngFor="let product of products">
+                <div class="shadow p-3 mb-4">
+                    
                 <a [routerLink]="['/product-home',product._id]" div class="mb-5 text-center  border-0 shadow pt-2">
                     <div class="">
-                        <img [src]="product.image" class="card-img-top hover-zoom" alt="...">
+                        <img [src]="product.image" class="card-img-top " alt="..." > 
                     </div>
                     <div class="card-body ">
                         <h5 class=" image text-dark">{{product.productname}}</h5>
@@ -16,8 +17,8 @@
                         <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
 
                     </div>
-                    
-                </a>
+                  </a>
+                </div>
                 
             </div>
         </div>

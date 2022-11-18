@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +7,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./myorders.component.css']
 })
 export class MyordersComponent implements OnInit {
+  products:any
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
   ngOnInit(): void {
+    this.getorders()
+    
+  }
+
+  getorders(){
+    this.http.get('http://localhost:3000/orderpage').subscribe((data) => {
+      this.products = data
+      console.log(this.products)
+    })
   }
 
 }

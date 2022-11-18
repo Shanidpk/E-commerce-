@@ -33,6 +33,10 @@ export class AdminserviceService {
   deleteuser(userid:any){
     return this.http.delete('http://localhost:3000/deleteuser/'+userid)
   }
+
+  getorders(){
+    return this.http.get('http://localhost:3000/orderpage')
+  }
   
 
 }

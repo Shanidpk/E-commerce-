@@ -1,20 +1,42 @@
 <section>
     <app-navbar></app-navbar>
-    <div class="row">
-        <div class="col-md-6 mt-5">
-            <img [src]="product.image" width="75%">
-        </div>
-
-        <div class="details col-md-6 mt-5">
-            <h4>{{product.productname}}</h4>
-            <p class="text-dark"></p>
-            <h4>{{product.price | currency:"INR"}}</h4>
-            <h6>{{product.description}}</h6>
-            <div class="button-section">
-                <div class="btn btn-outline-success"  (click)="addtoCart(product)">cart</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mt-5 rounded shadow text-center pt-3 pb-3">
+            <div class=" "  >
+                <img [src]="product.image" width="75%" height="" class="">
+            </div>
+            </div>
+    
+            <div class=" mt-5 col-md-6">
+                <div class="ms-4 mt-4">
+    
                 
-                <div class="btn btn-outline-success ms-2">buy now</div>    
+    
+                <h4>{{product.productname}}</h4>
+                <p class="text-dark"></p>
+                <h4 class="mt-2 text-danger">Rs.{{product.price}}</h4>
+                <p class="">
+                    <div class="offer-sec">
+                        <h6>Available offers</h6>
+                    
+                    <i class="bi bi-award">Special PriceGet extra ₹500 off (price inclusive of cashback/coupon)T&C</i>
+
+                    <i class="bi bi-award">   Bank Offer5% Cashback on Flipkart Axis Bank CardT&C</i><br>
+              
+                    <i class="bi bi-award">  Partner OfferSign up for Flipkart Pay Later and get Flipkart Gift Card worth up to ₹500*Know More</i><br>
+
+                    <i class="bi bi-award">  No cost EMI ₹1,375/month. Standard EMI also availableView Plans</i>
+                    </div>  
+                <div class="button-section mt-4">
+                <button class="pbtn  ps-4 pe-4 pt-2 pb-2 me-3 border fw-bold" (click)="addtoCart(product)">Add to cart</button>
+                <button class="pbtn  ps-4 pe-4 pt-2 pb-2  border fw-bold" [routerLink]="['/details',product._id]">Buynow</button>
+                </div>
+                <p class="mt-4">Description</p>
+                <h6>{{product.description}}</h6>
             </div>
         </div>
-        </div>
+            </div>
+    </div>
+  
 </section>

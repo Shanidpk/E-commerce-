@@ -12,10 +12,10 @@ import { DataServiceService } from 'src/service/data-service.service';
 export class SignupComponent implements OnInit {
 
   signupForm = this.Form.group({
-    name:['',[Validators.required]],
-    phone:['',[Validators.required]],
-    email:['',[Validators.required]],
-    password:['',[Validators.required]]
+    name:['',[Validators.required,Validators.pattern('[a-zA-Z]*')]],
+    phone:['',[Validators.required,Validators.pattern('[0-9]*')]],
+    email:['',[Validators.required,Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')]],
+    password:['',[Validators.required,Validators.minLength(6)]]
 })
 
 
@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
       if(data){
         if(this.signupForm.valid){
           alert(data.message)
-          this.router.navigateByUrl('login')
+          this.router.navigateByUrl('homepage')
         }else{
           alert(data.error.message)
         }
@@ -49,7 +49,5 @@ export class SignupComponent implements OnInit {
       }
         
     })
-    
   }
-
 }

@@ -25,9 +25,83 @@
       </div>
     </section>
 
+    <div class="head text-center mt-4"><h2>New Models</h2></div>
+
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-4 " *ngFor="let product of products" [ngStyle]="{display:product.category=='new'? 'block':'none'}">
+          <a [routerLink]="['/product-home',product._id]" div class="card-body mb-5 text-center  border-0 shadow pt-2" >
+            <div class="">
+                <img [src]="product.image" class="card-img-top " alt="..." > 
+            </div>
+            <div class="card-body ">
+                <h5 class="proname text-center">{{product.productname}}</h5>
+                <h5 class=" text-dark text-center">Rs.{{product.price}}</h5>
+                <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section>
-      <img src="https://i.shgcdn.com/f1c1d12d-526a-4018-85a9-d94effba5c27/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="">
+      <img src="../../assets/paul-cuoco-CO2vOhPqlrM-unsplash.jpg" alt="" class="sec-image">
+    </section>
+
+    <div class="head text-center mt-4"><h2>PREMIUM</h2></div>
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-3 mt-5" *ngFor="let product of products" [ngStyle]="{display:product.category=='Premium'? 'block':'none'}">
+          <a [routerLink]="['/product-home',product._id]" div class="mb-5 text-center  border-0 shadow pt-2">
+            <div class="">
+                <img [src]="product.image" class="card-img-top " alt="..." > 
+            </div>
+            <div class="card-body ">
+                <h5 class=" image text-dark text-center">{{product.productname}}</h5>
+                <h6 class=" text-dark text-center">{{product.price | currency:"INR"}}</h6>
+                <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+   
+
+    <section>
+      <img src="https://i.shgcdn.com/f1c1d12d-526a-4018-85a9-d94effba5c27/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" width="100%">
+    </section>
+  
+    <div class="head text-center mt-4"><h2>NORMAL</h2></div>
+
+
+    <section class="container">
+      <div class="row">
+        <div class="col-md-3 mt-5" *ngFor="let product of products" [ngStyle]="{display:product.category=='Normel'? 'block':'none'}">
+          <a [routerLink]="['/product-home',product._id]" div class="mb-5 text-center  border-0 shadow pt-2">
+            <div class="">
+                <img [src]="product.image" class="card-img-top " alt="..." > 
+            </div>
+            <div class="card-body ">
+                <h5 class=" image text-dark text-center">{{product.productname}}</h5>
+                <h6 class=" text-dark text-center">{{product.price | currency:"INR"}}</h6>
+                <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
+
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+
+
+    <section>
+      <img src="https://i.shgcdn.com/f1c1d12d-526a-4018-85a9-d94effba5c27/-/format/auto/-/preview/3000x3000/-/quality/lighter/" alt="" width="100%">
     </section>
   
   </div>
     
+<app-footer></app-footer>

@@ -1,1 +1,61 @@
-<p>myorders works!</p>
+
+
+    <div class="container">
+        <section>
+            <table class="table table-striped">
+                <thead >
+                  <tr>
+                    <th scope="col">si.no</th>
+                    <th scope="col">image</th>
+                    <th scope="col">price</th>
+                    <th scope="col">catagory</th>
+                    <th scope="col">name</th>
+                    <th scope="col">status</th>
+                  
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor = 'let product of products;let i = index'> 
+                    <th scope="row">{{i+1}}</th>
+                    <td><img [src]= product.image alt="" width="150px"></td>
+                    <td>{{product.productname}}</td>
+                    <td>{{product.price}}</td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.orderStatus}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+    </div>
+
+
+<!-- 
+    <div class="main">
+      <section class="container">
+      
+          <div class="text-center">
+              <h4>my Orders</h4>
+          </div>
+      <div class="row rowways mt-5">
+          <div class="col-md-6" *ngFor="let product of products">
+              <div class="pt-5  mb-3">
+                  <p class="mb-5 ms-4"></p>
+                  <div class="d-flex">
+                      <img [src]="product.image" alt="" style="width: 100px;">
+                      <div class="ms-4">  
+                          <label for="">{{product.productname}}</label><br>
+                          <label for="">{{product.category}}</label><br>
+                          <label for="">{{product.price | currency:'INR'}}</label><br>
+                          <label for="">status:-pending</label>
+                        
+                      </div>
+                  </div>
+                 
+              </div>
+              <hr>
+          </div>
+          
+      </div>
+  </section>
+  </div>
+   -->

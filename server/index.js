@@ -7,6 +7,7 @@ const deleteData = require('./admin/delete')
 const editData = require('./admin/edit')
 const addtocart = require('./cart')
 const deletecart = require('./deletecart')
+const order = require('./orders')
 const app = express()
 
 app.use(cors({
@@ -110,7 +111,7 @@ app.put('/editProduct/:id',(req,res) => {
         if(err){
             console.log("error");
         }else{
-            log
+            
             res.send(doc)
         }
     })
@@ -147,6 +148,33 @@ app.delete('/removecart/:id',(req,res)=> {
     })
 })
 
+app.post('/orders',(req,res) => {
+    console.log(res.body)
+    order.orders(req.body.productname,req.body.price,req.body.image,req.body.category,req.body.description,req.body.firstname,req.body.secondname,req.body.pin,req.body.address,req.body.email,req.body.phone,req.body.payment,req.body.amount,req.body.orderStatus).then((data) => {
+        res.status(data.statuscode).json(data)
+    })
+})
+
+app.get('/orderpage',(req,res) => {
+    db.Order.find().then((data)=> {
+        if(data){
+            res.status(200).json(data)
+        }
+    })
+})
+
+
+app.put('/orderchange/:id',(req,res)=>{
+    console.log("body ",req.body)
+    db.Order.findOneAndUpdate(req.params.id,{$set:{orderStatus:"shipped"}},{new:true},(err,doc) => {
+        if(err){
+            console.log("error")
+        }else{
+            res.send(doc)
+            console.log("doc working",doc)
+        }
+    })
+})
 
 
 
