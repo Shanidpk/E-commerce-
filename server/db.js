@@ -21,8 +21,7 @@ const Product = mongoose.model('Product',{
     price:String,
     image:String,
     category:String,
-    description:String,
-    
+    description:String
 })
 
 const Cart = mongoose.model('Cart',{

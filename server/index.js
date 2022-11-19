@@ -73,7 +73,7 @@ app.delete('/deleteuser/:id',(req,res) => {
     })
 })
 
-//-----------edit user --------------------------------------------------
+//-----------edit user -----------------------------
 
 app.put('/edituser/:id',(req,res) => {
         let newdata = {
@@ -96,7 +96,7 @@ app.put('/edituser/:id',(req,res) => {
 
 
 
-//Edit the Product -----------------------------
+//------------------------------Edit the Product -----------------------------
 
 app.put('/editProduct/:id',(req,res) => {
     let product = {
@@ -112,18 +112,18 @@ app.put('/editProduct/:id',(req,res) => {
             console.log("error");
         }else{
             
-            res.send(doc)
+             res.send(doc)
         }
     })
 })
 
-// get the single product by id 
+// --------------get the single product by id --------------------------- 
 app.get('/single-product/:id',(req,res) => {
     db.Product.findById(req.params.id).then((data) => {
         res.status(200).json(data)
     })
 })
-
+//--------------------add to cart-----------------------
 
 app.post('/addtocart',(req,res)=> { 
     addtocart.addtocart(req.body.productname,req.body.price,req.body.image,req.body.category,req.body.description).then((data) => {
@@ -131,6 +131,8 @@ app.post('/addtocart',(req,res)=> {
     })
 })
 
+
+// ------------------------------get the cart-----------------------------
 app.get('/getCart',(req,res) =>{
     db.Cart.find()
     .then((result) => {
@@ -140,21 +142,21 @@ app.get('/getCart',(req,res) =>{
     })
 })
 
-
+//-----------------------------remove from cart-----------------------------
 
 app.delete('/removecart/:id',(req,res)=> {
     deletecart.deletecart(req.params.id).then((data)=> {
         res.status(data.statuscode).json(data)
     })
 })
-
+//---------------------------add the orders----------------------
 app.post('/orders',(req,res) => {
     console.log(res.body)
     order.orders(req.body.productname,req.body.price,req.body.image,req.body.category,req.body.description,req.body.firstname,req.body.secondname,req.body.pin,req.body.address,req.body.email,req.body.phone,req.body.payment,req.body.amount,req.body.orderStatus).then((data) => {
         res.status(data.statuscode).json(data)
     })
 })
-
+// ====================get the orders ===================
 app.get('/orderpage',(req,res) => {
     db.Order.find().then((data)=> {
         if(data){
@@ -163,7 +165,7 @@ app.get('/orderpage',(req,res) => {
     })
 })
 
-
+//------------------------update the order status---------------------------
 app.put('/orderchange/:id',(req,res)=>{
     console.log("body ",req.body)
     db.Order.findOneAndUpdate(req.params.id,{$set:{orderStatus:"shipped"}},{new:true},(err,doc) => {
