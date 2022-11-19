@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { AdminserviceService } from '../service/adminservice.service';
 
 @Component({
@@ -9,8 +10,12 @@ import { AdminserviceService } from '../service/adminservice.service';
 })
 export class ViewUsersComponent implements OnInit {
 
+
+
+  
+
   users:any
-  constructor(private http:HttpClient,private adminser:AdminserviceService) { }
+  constructor(private http:HttpClient,private adminser:AdminserviceService,private form:FormGroup) { }
 
   ngOnInit(): void {
     this.getuser()
@@ -34,6 +39,11 @@ export class ViewUsersComponent implements OnInit {
         alert(data.error.message)
       }
     })
+  }
+
+  modify(id:any){
+    console.log(id);
+    
   }
 
 }

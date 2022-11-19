@@ -1,6 +1,6 @@
 
-
-    <div class="container">
+<app-navbar></app-navbar>
+    <!-- <div class="container">
         <section>
             <table class="table table-striped">
                 <thead >
@@ -26,36 +26,22 @@
                 </tbody>
               </table>
             </section>
+    </div> -->
+    <div class="head-sec">
+      <h4 class="text-center mt-2">My Orders</h4>
     </div>
 
-
-<!-- 
-    <div class="main">
-      <section class="container">
+<section>
+  <div class="container mb-3 mt-3" *ngFor="let product of products">
+    <div class="row card">
       
-          <div class="text-center">
-              <h4>my Orders</h4>
-          </div>
-      <div class="row rowways mt-5">
-          <div class="col-md-6" *ngFor="let product of products">
-              <div class="pt-5  mb-3">
-                  <p class="mb-5 ms-4"></p>
-                  <div class="d-flex">
-                      <img [src]="product.image" alt="" style="width: 100px;">
-                      <div class="ms-4">  
-                          <label for="">{{product.productname}}</label><br>
-                          <label for="">{{product.category}}</label><br>
-                          <label for="">{{product.price | currency:'INR'}}</label><br>
-                          <label for="">status:-pending</label>
-                        
-                      </div>
-                  </div>
-                 
-              </div>
-              <hr>
-          </div>
-          
+      <div class="card-body d-flex">
+        <div class="col-3 mb-2"><img [src]=product.image width="150px"></div>
+        <div class="col-3 mt-5 fw-bold">{{product.productname}}</div>
+        <div class="col-3 mt-5 fw-bold">{{product.price |currency:"INR"}}</div>
+        <div class="col-3 mt-5">placed</div>
+        
       </div>
-  </section>
+    </div>
   </div>
-   -->
+</section>

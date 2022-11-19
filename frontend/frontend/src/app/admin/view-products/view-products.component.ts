@@ -44,40 +44,44 @@ export class ViewProductsComponent implements OnInit {
     })
   }
 
-  changeproduct(product:any){
-    this.id=product._id
-    this.productname=product.name
-    this.price=product.price
-    this.category=product.category
-    this.description=product.description
-    this.image=product.image
+  changeproduct(){
+    // this.id=product._id
+    // this.productname=product.name
+    // this.price=product.price
+    // this.category=product.category
+    // this.description=product.description
+    // this.image=product.image
+    // this.abc=product
+    
+    // console.log("addaad",this.abc)
+    // this.editser.editproduct(this.id,this.productname,this.price,this.image,this.category,this.description).subscribe((data:any)=>{
+    //   if(data){
+    //     console.log("daaataaa",data)
+    //    this.getProduct()
+    //   }
+    // })
 
-    this.abc=product
+    let name = this.editform.value.productname
+    let price = this.editform.value.price
+    let image = this.editform.value.image
+    let catagory= this.editform.value.catagory
+    let description = this.editform.value.description
 
-    console.log("addaad",this.abc)
-    this.editser.editproduct(this.id,this.productname,this.price,this.image,this.category,this.description).subscribe((data:any)=>{
-      if(data){
-        console.log("daaataaa",data)
-       this.getProduct()
-      }
+    console.log(name,price,image,catagory,description)
+     this.editser.editproduct(this.proId,name,price,image,catagory,description).subscribe((data) => {
+       console.log("Edit data",data);
     })
-
-  //   let name = this.editform.value.productname
-  //   let price = this.editform.value.price
-  //   let image = this.editform.value.image
-  //   let catagory= this.editform.value.catagory
-  //   let description = this.editform.value.description
-
-  //   this.editser.editproduct(name,price,image,catagory,description).subscribe((data) => {
-  //     console.log("Edit data",data);
-  //  })
   
 
   }
 
-  modify(product:any){                            //to show the data in the model
+  modify(product:any){ //to show the data in the model
+    console.log("id",product)
+    
     this.editform.patchValue(product)
-    this.proId = product._id
+    this.proId = product
+    console.log(this.proId)
+    
   }
 
   delete(id:any){

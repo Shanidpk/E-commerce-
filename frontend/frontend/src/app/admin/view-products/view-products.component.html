@@ -19,7 +19,7 @@
                 <td>{{product.category}}</td>
                 <td><img src="{{product.image}}" alt="" width="150px"></td>
                 <td class="mt-5">
-                  <a class="btn btn-primary" href="#exampleModalToggle"  data-bs-toggle="modal" role="button" (click)="modify(product)">modify</a>
+                  <a class="btn btn-primary" href="#exampleModalToggle"  data-bs-toggle="modal" role="button" (click)="modify(product._id)">modify</a>
                    <button class="btn btn-danger ms-2" (click)="delete(product._id)">delete</button>
                 </td>
               </tr>
@@ -60,7 +60,7 @@
           
         </div>
         <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="changeproduct(product)">change</button>
+          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="changeproduct()">change</button>
         </div>
       </div>
     </div>

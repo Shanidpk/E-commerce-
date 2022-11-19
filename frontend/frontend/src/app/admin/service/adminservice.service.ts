@@ -18,9 +18,8 @@ export class AdminserviceService {
 
   editproduct(id:any,productname:any,price:any,image:any,category:any,description:any){
     const data= {
-      id,productname,price,image,category,description
+      productname,price,image,category,description
     }
-
     return this.http.put('http://localhost:3000/editProduct/'+id,data)
 
   }

@@ -17,7 +17,7 @@
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>
                 <td>
-                    <button class="btn btn-success">Modify</button>
+                    <button class="btn btn-success" (click)="modify(user._id)">Modify</button>
                 </td>
                 <td>
                     <button class="btn btn-danger" (click)="deleteuser(user._id)">Delete</button>
@@ -28,3 +28,36 @@
         </table>
     </div>
 </section>
+
+    
+
+<section *ngFor = "">
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalToggleLabel">Modal 1</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+           <form [formGroup]="editform"> 
+              <div class="productName ">
+                <input type="text" class="form-control w-75 ms-5 mb-2" formControlName="name">
+              </div>
+              <div class="price ">
+                <input type="text" class="form-control w-75 ms-5 mb-2" formControlName="email">
+              </div>
+              <div class="image ">
+                <input type="text"  class="form-control w-75 ms-5 mb-2" formControlName="phone">
+              </div>   
+            </form>
+            
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal" (click)="changeproduct()">change</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button">Open first modal</a> -->
+  </section>

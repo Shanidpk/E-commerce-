@@ -13,7 +13,9 @@
                     </div>
                     <div class="card-body ">
                         <h5 class=" image text-dark">{{product.productname}}</h5>
-                        <h6 class=" text-dark">{{product.price | currency:"INR"}}</h6>
+                        <h6 class=" text-dark">{{product.price | currency:"INR"}}
+                        <span class="text-decoration-line-through" style="color: red;">{{5000|currency:"INR"}}</span>
+                        </h6>
                         <!-- <button class="btn btn-outline-dark">Add to cart</button> -->
 
                     </div>

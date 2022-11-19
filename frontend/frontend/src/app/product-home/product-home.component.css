@@ -16,3 +16,11 @@ img{
     border: none;
     
  }
+ .cross{
+    color: #ccc!important;
+ }
+ .price{
+    font-weight:100px;
+    /* font-family: Gotham-Book,"sans-serif",Arial,"sans-serif"; */
+    /* font-family: "GOTHAMBOLD"; */
+ }
